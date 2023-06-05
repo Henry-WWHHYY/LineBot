@@ -1,0 +1,19 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/callback', methods=['POST', 'GET'])
+def callback():
+    if request.method == 'POST':
+        # Process the incoming webhook request here
+        # Access the request body using `request.get_json()`
+        # Handle the received events/messages and send appropriate responses
+        return 'OK'
+    elif request.method == 'GET':
+        # Respond to the verification request
+        verify_token = request.args.get('verify_token')
+        if verify_token == x/XLOWXVjPSvgrVSfgypJvu/hKtcIJ6Y1rG03PVl/aIjdGOJ1FS1LTk43SZyf91moOZ+ci9GEyJKRUjHzgYnAxxSngy2cPmIfcXj8nIbXKLKbVzPKZJjKZQgXeUFhV64w3w3/wOIODJlwqwFwdPGKAdB04t89/1O/w1cDnyilFU=:
+            challenge = request.args.get('challenge')
+            return challenge
+        else:
+            return 'Invalid verification token'
